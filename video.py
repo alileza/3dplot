@@ -9,8 +9,11 @@ for filename in glob.glob('/out/*.png'):
     size = (width,height)
     img_array.append(img)
 
+if len(img_array) == 0:
+    print('there are no files provided, exiting...')
+    quit()
 
-out = cv2.VideoWriter('/app/project.mp4',cv2.VideoWriter_fourcc(*'MP4V'), 15, size)
+out = cv2.VideoWriter('/app/project.mp4',cv2.VideoWriter_fourcc(*'MP4V'), 24, size)
  
 for i in range(len(img_array)):
     out.write(img_array[i])
