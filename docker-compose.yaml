@@ -1,7 +1,17 @@
 version: '3.4'
 services:
   3dplot:
-    build: .
+    image: czentye/matplotlib-minimal:3.1.2
+    entrypoint: ["python3"]
+    command: ["/app/main.py"]
+    volumes:
+      - ./out:/out
+      - ./:/app
+
+  video:
+    image: valian/docker-python-opencv-ffmpeg:py3
+    entrypoint: ["python3"]
+    command: ["/app/video.py"]
     volumes:
       - ./out:/out
       - ./:/app

@@ -34,4 +34,4 @@ for index, value in enumerate(x):
     ax.set_ylabel('Y Label')
     ax.set_zlabel('Z Label')
 
-    plt.savefig(f'/out/{index}.png')
+    plt.savefig(f'/out/{index:03d}.png')
