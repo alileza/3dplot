@@ -1,0 +1,8 @@
+version: '3.4'
+services:
+  3dplot:
+    build: .
+    volumes:
+      - ./out:/out
+      - ./:/app
+    
